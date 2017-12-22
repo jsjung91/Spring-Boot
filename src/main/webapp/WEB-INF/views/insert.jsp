@@ -50,7 +50,7 @@ function insert(){
 		</tr>
 		<tr>
 			<td>
-				<form name="f" method="post" action="/insertProc">
+				<form name="f" method="post" action="/insertProc" enctype="multipart/form-data">
 					<table width="750" border="0" cellspacing="0" cellpadding="0">
 						<tr>
 							<td width="120" height="25" class="td_d">제목</td>
@@ -82,6 +82,7 @@ function insert(){
 						</tr>
 						<tr>
 							<td align="center">
+							<input type="file" name="files">
 								<img src="../img/btn_reg.gif" onClick='insert();' style="cursor: pointer">
 								<img src="../img/btn_back.gif" onClick="location.href='/list'" style="cursor: pointer">
 							</td>

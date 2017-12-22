@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.example.board.domain.BoardVo;
+import com.example.board.domain.FileVo;
 import com.example.board.mapper.BoardMapper;
 
 @Service("com.example.board.service.BoardService")
@@ -33,6 +34,12 @@ public class BoardService {
 	}
 	public int hitPlusService(int idx) throws Exception{
 		return boardMapper.hitPlus(idx);
+	}
+	public int fileInsertService(FileVo file) throws Exception{
+		return boardMapper.fileInsert(file);
+	}
+	public FileVo fileDetailService(int bno) throws Exception{
+		return boardMapper.fileDetail(bno);
 	}
 	
 }

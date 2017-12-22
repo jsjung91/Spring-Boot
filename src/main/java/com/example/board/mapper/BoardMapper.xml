@@ -11,31 +11,35 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="boardList" resultType="com.example.board.domain.BoardVo" parameterType="com.example.board.domain.BoardVo">
   	 	select * from board
 		<trim prefix="where"  prefixOverrides="or|and">
- 	   <if test="subject!=null">
- 	      subject like "%"#{subject}"%" 
- 	   </if>
- 	   <if test="name!=null">
- 	      or name like "%"#{name}"%"  
- 	   </if>
- 	</trim>	 
- 	order by idx desc 
- 	 <!-- 	select * from board WHERE name like #{name} or subject like #{subject} order by idx desc -->
-  	<!-- select * from board 
- 	<if test="name!=null">
- 	WHERE name like "'%'재성'%'" 
- 	</if>
- 	order by idx desc --> 
- </select>
+ 	   		<if test="subject!=null">
+ 	      		subject like "%"#{subject}"%" 
+ 	   		</if>
+ 	   		<if test="name!=null">
+ 	      		or name like "%"#{name}"%"  
+ 	   		</if>
+ 		</trim>	 
+ 		order by idx desc 
+ 	</select>
 	
 	<select id="boardView" resultType="com.example.board.domain.BoardVo" parameterType="int">
 		select * from board where idx = #{ idx }
 	</select>
 	
-	<insert id="boardInsert" parameterType="com.example.board.domain.BoardVo">
+	<insert id="boardInsert" parameterType="com.example.board.domain.BoardVo" useGeneratedKeys="true" keyProperty="idx">
 		insert into board values(
 			#{idx}, #{subject}, #{content}, #{name}, #{pwd}, now(), 0			
 		)
 	</insert>
+	
+	<insert id="fileInsert" parameterType="com.example.board.domain.FileVo">
+		insert into files values(
+			#{fno}, #{idx}, #{fileName}, #{fileOriName}, #{fileUrl}
+		)
+	</insert>
+	
+	<select id = "fileDetail" parameterType="int" resultType="com.example.board.domain.FileVo">
+		select * from files where idx = #{idx}
+	</select>
 	
 	<update id="hitPlus" parameterType="int">
 		update board set hit = hit + 1 where idx = #{ idx }

@@ -40,7 +40,6 @@ function del(){
 			<td><img src="../../img/title_04.gif"></td>
 		</tr>
 	</table>
-
 	<form name="f" method="post">
 		<table width="690" border="0" cellspacing="0" cellpadding="0">
 			<tr>
@@ -62,6 +61,10 @@ function del(){
 					  <pre>${ vo.content }</pre>
 					</div>
 				</td>
+			</tr>
+			<tr>
+				<td width="120" height="30" class="td_d_4">첨부파일</td> <!-- 첨부 파일 다운로드  -->
+				<td class="td_d_2"><p><a href="/fileDown/${ files.idx }">${files.fileOriName}</a></p></td>
 			</tr>
 			<tr>
 				<td width="120" height="30" class="td_d_4">C.P.U</td>
