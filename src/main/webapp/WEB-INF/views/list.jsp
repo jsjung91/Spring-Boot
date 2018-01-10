@@ -49,7 +49,6 @@ window.onload = function() {
 		</tr>
 		<tr>
 			<td>
-			<!-- <form name="f" method="get" action="/list" onSubmit="search();"> -->
 				<table width="690" border="0" cellspacing="0" cellpadding="0">
 					<tr>
 						<td>
@@ -104,8 +103,7 @@ window.onload = function() {
 					</tr>
 					<tr>
 						<td>
-							<table width="690" border="0" cellpadding="0" cellspacing="0"
-								bgcolor="#F1F5F4">
+							<table width="690" border="0" cellpadding="0" cellspacing="0" bgcolor="#F1F5F4">
 								<tr>
 									<td width="7"><img src="../img/search_bg_01.gif"></td>
 									<td class="f11" align="center">
@@ -115,7 +113,6 @@ window.onload = function() {
 												<option value="all">::::전체보기::::</option>
 												<option value="subject">제목</option>
 												<option value="name">작성자</option>
-												<!-- <option value="subject_writer">제목+작성자</option> -->
 											</select> 
 											<input id="search_text" name="search_text">
 											<input type="submit" value="검색" onclick="search();">
@@ -137,7 +134,6 @@ window.onload = function() {
 						</td>
 					</tr>
 				</table>
-		<!-- </form> -->
 			</td>
 		</tr>
 	</table>

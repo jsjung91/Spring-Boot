@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,6 +41,7 @@ public class BoardController {
 				vo.setName(request.getParameter("search_text"));
 			}
 		}
+		
 		List<BoardVo> list = boardService.boardListService(vo);
 		
 		model.addAttribute("list", list);
@@ -208,6 +208,4 @@ public class BoardController {
         }
         
     }
-		/*@Value("${file.upload.directory")
-			String uploadFileDir;*/
 }

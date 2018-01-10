@@ -30,7 +30,6 @@ public class BoardService {
 	}
 	public int boardDeleteService(int idx) throws Exception{
 		return boardMapper.boardDelete(idx);
-		
 	}
 	public int hitPlusService(int idx) throws Exception{
 		return boardMapper.hitPlus(idx);
